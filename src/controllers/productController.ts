@@ -68,3 +68,15 @@ export const updateProduct = async (req: Request, res: Response) => {
 
   sendSuccess(res, 200, "Produk berhasil diperbarui", product);
 };
+
+// DELETE /products/:product_id
+export const deleteProduct = async (req: Request, res: Response) => {
+  const id = parseId(req.params.product_id);
+
+  const existing = await prisma.product.findUnique({ where: { id } });
+  if (!existing) throw new HttpError(404, "Produk tidak ditemukan");
+
+  const product = await prisma.product.delete({ where: { id } });
+
+  sendSuccess(res, 200, "Produk berhasil dihapus", product);
+};

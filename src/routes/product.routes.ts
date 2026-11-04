@@ -2,6 +2,7 @@
 import { Router } from "express";
 import {
   createProduct,
+  deleteProduct,
   getProductById,
   getProducts,
   updateProduct,
@@ -15,5 +16,6 @@ router.get("/:product_id", getProductById);
 router.post("/", createProduct);
 router.put("/", updateProduct); // id dikirim di body
 router.put("/:product_id", updateProduct); // id juga boleh di path
+router.delete("/:product_id", deleteProduct);
 
 export default router;
