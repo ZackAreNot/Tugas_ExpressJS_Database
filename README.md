@@ -89,7 +89,7 @@ Contoh PUT:
 
 ## Bukti Pengujian
 
-Semua bukti diambil dari server yang berjalan di `http://localhost:3000` dengan PostgreSQL lokal. Perubahan database difoto dari **Prisma Studio** (tabel `Product`). Bukti per fitur juga ada di deskripsi Pull Request masing-masing endpoint.
+Semua request diuji lewat aplikasi **Postman** (screenshot asli) ke server di `http://localhost:3000` dengan PostgreSQL lokal. Perubahan database difoto dari **Prisma Studio** (tabel `Product`). Bukti per fitur juga ada di deskripsi Pull Request masing-masing endpoint.
 
 Test case Postman: import `postman/tugasexpress.postman_collection.json` lalu jalankan folder secara berurutan (Runner). Reset data dulu dengan `npx tsx prisma/seed.ts`.
 
@@ -147,5 +147,5 @@ Skenario gagal:
 
 ![DELETE 404](docs/screenshots/21-delete-404.png)
 
-### Hasil run seluruh collection (19 request)
+### Hasil run seluruh collection di Postman Runner (19 request, 38 test lolos)
 ![Collection runner](docs/screenshots/22-collection-runner.png)
